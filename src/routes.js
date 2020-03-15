@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import User from './app/models/User';
 
 import UserController from './app/controller/UserController';
+import SessionController from './app/controller/SessionController';
 
 const routes = new Router(); // instancio um novo objeto Router
+routes.get('/session', SessionController.store);
 
 routes.post('/users', UserController.store);
 
