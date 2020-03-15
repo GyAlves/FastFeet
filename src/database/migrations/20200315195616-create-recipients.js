@@ -11,28 +11,36 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      street: {
+      rua: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      number: {
+      numero: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      complement: {
+      complemento: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      city: {
+      cidade: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      state: {
+      estado: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       cep: {
         type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
     });
