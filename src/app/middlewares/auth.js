@@ -16,8 +16,8 @@ export default async (req, res, next) => {
     const decoded = await promisify(jwt.verify)(token, authConfig.secret);
     req.userId = decoded.id;
     const user = await User.findByPk(req.userId);
-    const adminEmail = user.email;
-    if (adminEmail !== 'admin@fastfeet.com') {
+    const isAdmin = user.admin;
+    if (!isAdmin) {
       return res
         .status(401)
         .json({ message: 'User it is not an administrator' });

@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('users', {
+    return queryInterface.createTable('deliveryman', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -15,12 +15,8 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      password_hash: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      admin: {
-        type: Sequelize.BOOLEAN,
+      avatar_id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       created_at: {
@@ -35,6 +31,6 @@ module.exports = {
   },
 
   down: queryInterface => {
-    return queryInterface.dropTable('users');
+    return queryInterface.dropTable('deliveryman');
   },
 };
