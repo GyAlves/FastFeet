@@ -4,6 +4,7 @@ import UserController from './app/controller/UserController';
 import SessionController from './app/controller/SessionController';
 import RecipientController from './app/controller/RecipientController';
 import DeliverymanController from './app/controller/DeliverymanController';
+import DeliveryController from './app/controller/DeliveryController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -18,5 +19,7 @@ routes.put('/destinatarios/:id', authMiddleware, RecipientController.update);
 routes.post('/deliveryman', authMiddleware, DeliverymanController.store);
 routes.get('/deliveryman', authMiddleware, DeliverymanController.index);
 routes.put('/deliveryman/:id', authMiddleware, DeliverymanController.update);
+
+routes.post('/delivery', authMiddleware, DeliveryController.store);
 
 export default routes;
