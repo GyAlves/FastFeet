@@ -21,5 +21,7 @@ routes.get('/deliveryman', authMiddleware, DeliverymanController.index);
 routes.put('/deliveryman/:id', authMiddleware, DeliverymanController.update);
 
 routes.post('/delivery', authMiddleware, DeliveryController.store);
+routes.get('/delivery', authMiddleware, DeliveryController.index);
+routes.put('/delivery/:id', authMiddleware, DeliveryController.update);
 
 export default routes;
