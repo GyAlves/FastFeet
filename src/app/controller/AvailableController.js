@@ -23,6 +23,10 @@ class AvailableController {
       where: { deliveryman_id: req.body.id, canceled_at: null, end_date: null },
     });
 
+    if (!deliveries) {
+      return res.status(401).json({ error: 'No available delivery found' });
+    }
+
     return res.json(deliveries);
   }
 }
