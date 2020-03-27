@@ -6,6 +6,7 @@ class Deliveries extends Model {
       {
         recipient_id: Sequelize.INTEGER,
         deliveryman_id: Sequelize.INTEGER,
+        signature_id: Sequelize.INTEGER,
         product: Sequelize.STRING,
         canceled_at: Sequelize.DATE,
         start_date: Sequelize.DATE,
@@ -26,6 +27,10 @@ class Deliveries extends Model {
     this.belongsTo(models.Deliveryman, {
       foreignKey: 'deliveryman_id',
       as: 'deliveryman',
+    });
+    this.belongsTo(models.File, {
+      foreignKey: 'signature_id',
+      as: 'signature',
     });
   }
 }
