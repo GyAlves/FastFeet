@@ -7,7 +7,7 @@ class NotAvailableController {
     const { id } = req.params;
     const deliveryman = await Deliveryman.findByPk(id);
     if (!deliveryman) {
-      return res.status(401).json({ error: 'Deliveryman does not exists' });
+      return res.status(401).json({ error: 'Deliveryman not found' });
     }
 
     const deliveries = await Deliveries.findAll({
