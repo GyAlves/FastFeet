@@ -32,6 +32,10 @@ class Deliveries extends Model {
       foreignKey: 'signature_id',
       as: 'signature',
     });
+    this.belongsTo(models.DeliveryProblems, {
+      foreignKey: 'delivery_id',
+      as: 'delivery',
+    });
   }
 }
 export default Deliveries;
