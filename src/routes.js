@@ -11,6 +11,7 @@ import FileController from './app/controller/FileController';
 import AvailableController from './app/controller/AvailableController';
 import NotAvailableController from './app/controller/NotAvailableController';
 import StartDateController from './app/controller/StartDateController';
+import EndDateController from './app/controller/EndDateController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -40,4 +41,5 @@ routes.get('/deliveryman/deliveries', AvailableController.index);
 routes.get('/deliveryman/:id/deliveries', NotAvailableController.index);
 
 routes.put('/deliveryman/:userId/deliveries', StartDateController.update);
+routes.put('/deliverymans/:userId/deliveries', EndDateController.update);
 export default routes;

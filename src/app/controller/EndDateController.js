@@ -8,6 +8,10 @@ class StartDateController {
   async update(req, res) {
     const schema = Yup.object().shape({
       id: Yup.number().required(),
+      end_date: Yup.date(),
+      signature_id: Yup.number().when('end_date', (end_date, field) =>
+        end_date ? field.required() : field
+      ),
     });
     if (!(await schema.isValid(req.body))) {
       return res.status(401).json({ error: 'Validation Fails' });
@@ -22,6 +26,7 @@ class StartDateController {
     const qtdDeliveries = await Deliveries.findAndCountAll({
       where: {
         start_date: { [Op.gt]: 0 },
+        deliveryman_id: userId,
       },
     });
     if (qtdDeliveries.count >= 5) {
@@ -29,7 +34,9 @@ class StartDateController {
         .status(401)
         .json({ error: 'You can not do more than 5 deliveries a day' });
     }
-    const deliveries = await Deliveries.findByPk(id);
+    const deliveries = await Deliveries.findOne({
+      where: { deliveryman_id: userId, id },
+    });
     if (!deliveries) {
       return res.status(401).json({ error: 'Delivery not found' });
     }
@@ -42,9 +49,9 @@ class StartDateController {
     const searchDate = Number(date);
     const hour = getHours(searchDate);
     if (!(hour > 8 && hour < 18)) {
-      return res.json({ message: 'Working Period is over' });
+      return res.json({ message: 'You can only deliver in working period' });
     }
-    deliveries.start_date = searchDate;
+    deliveries.end_date = searchDate;
     await deliveries.save();
     return res.json(deliveries);
   }
