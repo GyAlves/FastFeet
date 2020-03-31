@@ -6,6 +6,7 @@ class DeliveryProblems extends Model {
       {
         description: Sequelize.STRING,
         delivery_id: Sequelize.INTEGER,
+        deliveryman_id: Sequelize.INTEGER,
       },
       {
         sequelize,

@@ -12,6 +12,11 @@ module.exports = {
         references: { model: 'deliveries', key: 'id' },
         allowNull: true,
       },
+      deliveryman_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'deliverymans', key: 'id' },
+        allowNull: false,
+      },
       description: {
         type: Sequelize.STRING,
         allowNull: true,
