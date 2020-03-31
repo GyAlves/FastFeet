@@ -21,11 +21,11 @@ class StartDateController {
     if (!deliveryman) {
       return res.status(401).json({ error: 'Deliveryman not found' });
     }
-
+    // /////////////////////////////////////////////////////////////////////
     const { id } = req.body;
     const qtdDeliveries = await Deliveries.findAndCountAll({
       where: {
-        start_date: { [Op.gt]: 0 },
+        end_date: { [Op.gt]: 0 },
         deliveryman_id: userId,
       },
     });
@@ -34,6 +34,7 @@ class StartDateController {
         .status(401)
         .json({ error: 'You can not do more than 5 deliveries a day' });
     }
+    // ////////////////////////////////////////////////////////////////////
     const deliveries = await Deliveries.findOne({
       where: { deliveryman_id: userId, id },
     });

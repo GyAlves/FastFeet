@@ -12,6 +12,7 @@ class StartDateController {
     if (!(await schema.isValid(req.body))) {
       return res.status(401).json({ error: 'Validation Fails' });
     }
+    // //////////////////////////////////////////////////////////////
     const { userId } = req.params;
     const deliveryman = await Deliveryman.findByPk(userId);
     if (!deliveryman) {
@@ -29,7 +30,9 @@ class StartDateController {
         .status(401)
         .json({ error: 'You can not do more than 5 deliveries a day' });
     }
-    const deliveries = await Deliveries.findByPk(id);
+    const deliveries = await Deliveries.findOne({
+      where: { deliveryman_id: userId, id },
+    });
     if (!deliveries) {
       return res.status(401).json({ error: 'Delivery not found' });
     }
