@@ -10,7 +10,6 @@ class DeliverymanController {
     if (!(await schema.isValid(req.body))) {
       return res.status(401).json({ error: 'Validation Fails' });
     }
-
     const deliverymanExists = await Deliveryman.findOne({
       where: { email: req.body.email },
     });
