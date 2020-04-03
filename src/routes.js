@@ -12,6 +12,7 @@ import authMiddleware from './app/middlewares/auth';
 import DeliverymanAuth from './app/middlewares/DeliverymanAuth';
 import DeliveriesController from './app/controller/DeliveriesController';
 import AvailableDController from './app/controller/AvailableDController';
+import UnavailableDController from './app/controller/UnavailableDController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -39,5 +40,11 @@ routes.get(
   '/available/deliveries',
   DeliverymanAuth,
   AvailableDController.index
+);
+
+routes.get(
+  '/unavailable/deliveries',
+  DeliverymanAuth,
+  UnavailableDController.index
 );
 export default routes;
