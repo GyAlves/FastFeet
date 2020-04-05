@@ -15,6 +15,7 @@ import AvailableDController from './app/controller/AvailableDController';
 import UnavailableDController from './app/controller/UnavailableDController';
 import RemovalController from './app/controller/RemovalController';
 import DeliverController from './app/controller/DeliverController';
+import ProblemsController from './app/controller/ProblemsController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -52,4 +53,7 @@ routes.get(
 
 routes.put('/removal/deliveries', DeliverymanAuth, RemovalController.update);
 routes.put('/deliver/deliveries', DeliverymanAuth, DeliverController.update);
+
+routes.post('/deliveries/problems', DeliverymanAuth, ProblemsController.store);
+routes.get('/delivery/:id/problems', DeliverymanAuth, ProblemsController.index);
 export default routes;
