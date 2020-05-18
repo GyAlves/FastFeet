@@ -1,6 +1,4 @@
-<h1 align="center">
-  <img src="https://ik.imagekit.io/am6iypeh5w/gobarber4_l_JQxR3Hp.gif" /> 
- </h1>
+
 
 # FastFeet
 
