@@ -1,9 +1,25 @@
 
 
-# FastFeet
+<h1 align="center">
+  FastFeet
+</h1>
+
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/GyAlves/FastFeet?color=red" />
+
+  <a href="https://www.linkedin.com/in/gyasmin-assun%C3%A7%C3%A3o-223417180/">
+    <img alt="Made by Gyasmin Alves" src="https://img.shields.io/badge/made%20by-Gyasmin%20Alves-red">
+  </a>
+
+ <img alt="License" src="">
+
+</p>
+
 
 ## 📖 Sobre  
-API RestFul de uma transaportadora desenvolvida durante o **Bootcamp GoStack** da Rocketseat. Possui as seguintes features :
+API RestFul de uma transaportadora desenvolvida durante o **Bootcamp GoStack** da Rocketseat. 
+Possui as seguintes features :
 
 - Criar Usuários
 - Criar  avatar
@@ -21,12 +37,10 @@ Tecnologias e ferramentas utilizadas no projeto :
 - Insomnia 
 - Visual Studio Code
 
+##  Licence :memo:
 
-## 🎁 Como baixar o projeto 
-```bash
-    $ git clone https://github.com/GyAlves/FastFeet
-```
+MIT Licence. See the file [LICENSE](LICENSE.md) for more details.
+
 ---
-### Desenvolvido por :
-#### Gyasmin Alves Assunção 
-#### Rocketseat
+
+### Creating intuitives, pretty and problem solver applications
