@@ -12,7 +12,7 @@
     <img alt="Made by Gyasmin Alves" src="https://img.shields.io/badge/made%20by-Gyasmin%20Alves-red">
   </a>
 
- <img alt="License" src="">
+ <img alt="License" src="https://img.shields.io/github/license/GyAlves/Fastfeet?color=red">
 
 </p>
 
