@@ -17,7 +17,7 @@
 </p>
 
 
-## 📖 Sobre  
+## Sobre 📖  
 API RestFul de uma transaportadora desenvolvida durante o **Bootcamp GoStack** da Rocketseat. 
 Possui as seguintes features :
 
@@ -34,8 +34,23 @@ Tecnologias e ferramentas utilizadas no projeto :
 - Nodemon
 - Express
 - JWT ( Jason Web Token )
-- Insomnia 
-- Visual Studio Code
+
+
+ ## Requisitos necessários para rodar o projeto 
+ #### OBS: Necessário baixar o Insomnia para fazer as requisições 
+
+  ```   
+  // 1 - Git Clone
+  
+  // 2 - Instale as depêndencias
+  yarn install
+  
+  // 3 - Rode o projeto
+  yarn dev 
+  
+  // 4 -Dentro do Insomnia crie as requisições e configure as rotas de acordo com os arquivos da pasta routes
+  
+```
 
 ##  Licence :memo:
 
